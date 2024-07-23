@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="userOtp" id="userOtp"/>
+    <button onClick="verifyOtp()" id="verifyBtn">Verify OTP</button>
+
+<script>
+
+let chances = 1;
+let totalChances = 3;
+function verifyOtp(){
+    if (chances >= 3){
+        document.querySelector("#verifyBtn").style.display = "none";
+    }
+    else{
+        const mainOtp = parseInt(localStorage.getItem("mainOtp"));
+        const userOtp = parseInt(document.querySelector("#userOtp").value);
+
+        if (mainOtp === userOtp){
+
+            alert("application is successful");
+
+        }
+
+        else{
+
+            alert("application failed");
+            alert(`total ${totalChances - chances} chances left`);
+        }
+    }
+
+    chances++;
+}
+
+
+</script>
+
+</body>
+</html>

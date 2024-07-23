@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onClick="generateOtp()">Generate OTP</button>
+
+
+    <script>
+        let chances =0;
+
+        function generateOtp(){
+            var mainOtp = Math.round(Math.random() * 20000) + 20000;
+            localStorage.setItem("mainOtp", mainOtp);
+            alert(mainOtp);
+            window.locatin.assign("confirmation.html");
+        }
+    </script>
+</body>
+</html>
